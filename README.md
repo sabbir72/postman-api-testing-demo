@@ -125,9 +125,6 @@ Your feedback and contributions are always welcome!
 
 ---
 
-## 📄 License
-
-This project is licensed under the **MIT License**.
 
 ---
 
@@ -135,7 +132,7 @@ This project is licensed under the **MIT License**.
 
 **Sabbir Ahmed**
 [GitHub: @sabbir72](https://github.com/sabbir72)
-Email: [sabbir72@example.com](mailto:sabbir72@example.com)
+Email: [sabbir72@example.com](mailto:sabbircse72@gmail.com)
 
 ---
 
