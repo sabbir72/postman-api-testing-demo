@@ -1,192 +1,105 @@
-ঠিক আছে! আমি আপনার GitHub রিপো **`https://github.com/sabbir72/postman-api-testing-demo.git`** এর জন্য একটি সুন্দর এবং সম্পূর্ণ README ফাইল তৈরি করে দিলাম।
-
-আপনি নিচের README.md কনটেন্টটি আপনার রিপোর মূল ডিরেক্টরিতে `README.md` নামে ফাইল বানিয়ে পেস্ট করতে পারেন:
-
-```markdown
-# Postman API Testing Demo
-
-এই প্রজেক্টটি Postman এর API টেস্টগুলোকে GitHub Actions দিয়ে স্বয়ংক্রিয়ভাবে চালানোর জন্য তৈরি করা হয়েছে। এখানে আমরা Newman ব্যবহার করে টেস্ট চালাবো এবং HTML ফরম্যাটে রিপোর্ট তৈরি করব।
+নিশ্চিতভাবেই Sabbir ভাই! নিচে আপনার জন্য **সম্পূর্ণ প্রস্তুত** (totally ready) `README.md` ফাইল দেওয়া হলো, যেখানে আপনার রিপোজিটরির নাম `postman-ci-cd` ধরে লেখা হয়েছে। আপনি সরাসরি কপি করে রিপোজিটরির মূল ফোল্ডারে `README.md` নামে সেভ করে ব্যবহার করতে পারবেন।
 
 ---
 
-আপনার প্রশ্ন অনুযায়ী, আপনি যা বলেছেন:
+````markdown
+# Postman CI/CD Automation
 
-```
-├── collections/
-│ └── postman_collection.json
-├── environments/
-│ └── postman_environment.json
-├── reports/
-├── .github/
-│ └── workflows/
-│ └── postman_tests.yml
-├── README.md
-```
-
-এই স্ট্রাকচারটি **GitHub README.md ফাইলে সুন্দরভাবে দেখাতে গেলে** আপনাকে এটিকে `code block` এর ভিতরে রাখতে হবে এবং Markdown ফর্ম্যাটে সঠিকভাবে ইন্ডেন্ট করতে হবে। নিচে দেওয়া হলো **সঠিকভাবে ভেঙে ফরম্যাট করা রূপ**:
+Automate your API testing with **Postman** collections running on **GitHub Actions** using **Newman**.  
+This repository demonstrates continuous integration of API tests with HTML report generation.
 
 ---
 
-## ✅ Markdown এ সঠিকভাবে ফাইল স্ট্রাকচার দেখানোর উপায়
+## Project Contents
 
-```markdown
-## 📁 Project Structure
-
-```
-
-├── collections/
-│   └── postman\_collection.json
-├── environments/
-│   └── postman\_environment.json
-├── reports/
-├── .github/
-│   └── workflows/
-│       └── postman\_tests.yml
-├── README.md
-
-```
-```
-
-> 🔁 উপরের Markdown কোডটুকু আপনি সরাসরি `README.md` ফাইলে ব্যবহার করতে পারবেন এবং GitHub এ সুন্দরভাবে দেখাবে।
+- `postman_collection.json` — Postman API test collection  
+- `postman_environment.json` — Postman environment variables  
+- `.github/workflows/postman_tests.yml` — GitHub Actions workflow config
 
 ---
 
-## ✍️ ব্যাখ্যা:
+## How it works
 
-* Markdown-এ ফাইল স্ট্রাকচার দেখাতে গেলে `triple backticks` (\`\`\`) দিয়ে ঘেরা ব্লকের মধ্যে রাখতে হয়।
-* এইভাবে দিলে ভেঙে যায় না এবং GitHub বা VS Code এ সঠিক ফরম্যাটে Tree Structure হিসেবে দেখায়।
-
----
-
-## চাইলে Copy করার জন্য সম্পূর্ণ রেডি ব্লক
-
-```markdown
-## 📁 Project Structure
-
-```
-
-├── collections/
-│   └── postman\_collection.json
-├── environments/
-│   └── postman\_environment.json
-├── reports/
-├── .github/
-│   └── workflows/
-│       └── postman\_tests.yml
-├── README.md
-
-```
-```
+- Trigger: Push to `main` branch  
+- Steps:
+  1. Checkout code  
+  2. Setup Node.js (v18)  
+  3. Install Newman and HTML reporter  
+  4. Run Postman tests using Newman CLI  
+  5. Generate HTML test report in `reports/report.html`  
+  6. Upload report as GitHub Actions artifact
 
 ---
 
+## Usage
 
+### Running tests locally
+
+```bash
+newman run postman_collection.json \
+  --environment postman_environment.json \
+  --reporters cli,html \
+  --reporter-html-export report.html
 ````
 
----
+### Viewing reports
 
-## 🚀 কিভাবে কাজ করে?
-
-- যখনই `main` ব্রাঞ্চে কোড পুশ করবেন, GitHub Actions নিচের কাজগুলো করবে:
-  1. আপনার কোড চেকআউট করবে
-  2. Node.js সেটআপ করবে (ভার্সন 18)
-  3. Newman ও Newman HTML রিপোর্টার ইনস্টল করবে
-  4. Postman কলোকশন রান করবে নির্দিষ্ট environment ফাইলের সাহায্যে
-  5. টেস্ট রিপোর্ট `reports/report.html` হিসেবে এক্সপোর্ট করবে
-  6. রিপোর্ট ফাইলগুলো GitHub Artifacts হিসেবে আপলোড করবে
+* After GitHub Actions completes, navigate to the workflow run page
+* Download the `postman-report` artifact zip
+* Extract and open `report.html` in a browser
 
 ---
 
-## 🛠️ GitHub Actions Workflow: `.github/workflows/postman_tests.yml`
+## GitHub Actions Workflow (`.github/workflows/postman_tests.yml`)
 
 ```yaml
 name: Run Postman Tests
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
-  postman-tests:
+  test:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: '18'
 
-      - name: Install Newman and HTML Reporter
-        run: |
-          npm install -g newman
-          npm install -g newman-reporter-html
+      - run: |
+          npm install -g newman newman-reporter-html
 
-      - name: Create reports directory
-        run: mkdir -p reports
+      - run: mkdir -p reports
 
-      - name: Run Postman Tests
-        run: |
+      - run: |
           newman run postman_collection.json \
             --environment postman_environment.json \
             --reporters cli,html \
             --reporter-html-export reports/report.html
 
-      - name: Upload report artifact
-        uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v4
         with:
           name: postman-report
           path: reports/
-````
-
----
-
-## 📋 লোকালি টেস্ট রান করা
-
-আপনি চাইলে নিজের কম্পিউটারে Newman দিয়ে টেস্ট রান করতে পারেন:
-
-```bash
-npm install -g newman newman-reporter-html
-
-newman run postman_collection.json \
-  --environment postman_environment.json \
-  --reporters cli,html \
-  --reporter-html-export report.html
 ```
 
 ---
 
-## 📂 রিপোর্ট কোথায় পাবেন?
+## License
 
-* GitHub Actions এর রান শেষ হলে,
-* রিপোতে যান → **Actions** ট্যাবে ক্লিক করুন
-* সর্বশেষ রান ওপেন করুন
-* নিচে **Artifacts** সেকশনে ক্লিক করে `postman-report` ডাউনলোড করুন
-* ZIP আনজিপ করুন, তার ভিতরে পাবেন `report.html`
-* ব্রাউজারে খুলে বিস্তারিত টেস্ট রিপোর্ট দেখুন
+MIT © Sabbir Ahamed
 
 ---
 
-## 💡 গুরুত্বপূর্ণ নোটস
+## Author
 
-* `postman_collection.json` এবং `postman_environment.json` ফাইলগুলো রিপোর রুটে থাকা উচিত
-* যদি অন্য ব্রাঞ্চে কাজ করেন, তাহলে `.yml` ফাইলের `branches` সেটিং পরিবর্তন করুন
-* Ubuntu রানার ব্যবহার করা হয়েছে, Windows হলে স্ল্যাশ (`\`) এবং কমান্ড সিনট্যাক্স একটু ভিন্ন হবে
-
----
-
-## 👤 লেখক
-
-* Sabbir Ahmed ([@sabbir72](https://github.com/sabbir72))
-
----
-
----
-
-**ধন্যবাদ!**
-যদি সাহায্যের প্রয়োজন হয়, আমাকে জানাতে পারেন।
+[Sabbir Ahamed](https://github.com/sabbir72)
 
 ```
 
+কোনো সাহায্য লাগলে জানাবেন! 😊
+```
