@@ -12,18 +12,16 @@
 ## 📂 প্রজেক্ট স্ট্রাকচার
 
 ```
-
-.
-.
 ├── collections/
-│   └── postman_collection.json            # Postman Collection ফাইল
+│ └── postman_collection.json
 ├── environments/
-│   └── postman_environment.json           # Postman Environment ফাইল
-├── reports/                               # Test reports এখানে জমা হবে (GitHub Actions রান এ)
+│ └── postman_environment.json
+├── reports/
 ├── .github/
-│   └── workflows/
-│       └── postman_tests.yml              # GitHub Actions workflow ফাইল
-├── README.md                              # Project overview and instructions
+│ └── workflows/
+│ └── postman_tests.yml
+├── README.md
+
 
 
 ````
