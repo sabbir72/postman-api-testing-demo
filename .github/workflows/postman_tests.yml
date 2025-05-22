@@ -6,7 +6,7 @@ on:
 
 jobs:
   postman-tests:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest  # ✅ Ubuntu OS
 
     steps:
       - name: Checkout code
@@ -23,13 +23,13 @@ jobs:
           npm install -g newman-reporter-html
 
       - name: Create reports directory
-        run: mkdir reports
+        run: mkdir -p reports  # ✅ Ubuntu compatible
 
       - name: Run Postman Tests
         run: |
-          newman run postman_collection.json `
-            --environment postman_environment.json `
-            --reporters cli,html `
+          newman run postman_collection.json \
+            --environment postman_environment.json \
+            --reporters cli,html \
             --reporter-html-export reports/report.html
 
       - name: Upload report artifact
