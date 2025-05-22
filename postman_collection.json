@@ -1,0 +1,51 @@
+{
+	"info": {
+		"_postman_id": "fdccded0-da9b-44cd-88e2-e85690f64517",
+		"name": "demoblaze2025",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26742114",
+		"_collection_link": "https://blue-capsule-187837.postman.co/workspace/gorest~81f3b63b-3e60-4abd-9434-d36b402e2675/collection/26742114-fdccded0-da9b-44cd-88e2-e85690f64517?action=share&source=collection_link&creator=26742114"
+	},
+	"item": [
+		{
+			"name": "AllBooking ID",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    const expectedStatus = 200; \r",
+							"    const actualStatus = pm.response.code;\r",
+							"\r",
+							"    // Test to check if the actual status matches the expected status\r",
+							"    pm.expect(actualStatus).to.eql(expectedStatus);\r",
+							"\r",
+							"    // Print the expected and actual status codes to the console\r",
+							"    console.log(`Expected status: ${expectedStatus}, Actual status: ${actualStatus}`);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{BaseBooK}}/booking/",
+					"host": [
+						"{{BaseBooK}}"
+					],
+					"path": [
+						"booking",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
