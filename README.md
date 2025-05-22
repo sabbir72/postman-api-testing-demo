@@ -14,11 +14,17 @@
 ```
 
 .
-├── postman\_collection.json
-├── postman\_environment.json
+.
+├── collections/
+│   └── postman_collection.json            # Postman Collection ফাইল
+├── environments/
+│   └── postman_environment.json           # Postman Environment ফাইল
+├── reports/                               # Test reports এখানে জমা হবে (GitHub Actions রান এ)
 ├── .github/
 │   └── workflows/
-│       └── postman\_tests.yml
+│       └── postman_tests.yml              # GitHub Actions workflow ফাইল
+├── README.md                              # Project overview and instructions
+
 
 ````
 
