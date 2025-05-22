@@ -27,8 +27,8 @@ jobs:
 
       - name: Run Postman Tests
         run: |
-          newman run Restfull_Booker.postman_collection.json `
-            --environment Book_Environment.postman_environment.json `
+          newman run postman_collection.json `
+            --environment postman_environment.json `
             --reporters cli,html `
             --reporter-html-export reports/report.html
 
