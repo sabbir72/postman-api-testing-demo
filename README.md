@@ -132,7 +132,7 @@ Your feedback and contributions are always welcome!
 
 **Sabbir Ahmed**
 [GitHub: @sabbir72](https://github.com/sabbir72)
-Email: [sabbir72@example.com](mailto:sabbircse72@gmail.com)
+Email: [sabbircse72@gmail.com](mailto:sabbircse72@gmail.com)
 
 ---
 
